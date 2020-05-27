@@ -1,0 +1,11 @@
+.sass-cache
+.DS_Store
+.start.pid
+.port.tmp
+.idea
+.env
+.eslintcache
+*secrets*.yaml
+!secrets.yaml
+!secrets-example.yaml
+*.iml
