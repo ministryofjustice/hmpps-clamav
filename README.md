@@ -16,15 +16,20 @@ You will need the following tools installed:
 ## To test with a local build:
 
 ```bash
-docker build -t mojdigitalstudio/clamav:latest .
-docker tag  mojdigitalstudio/clamav:latest  mojdigitalstudio/clamav:0.102.X_Y
-docker push mojdigitalstudio/clamav:latest
-docker push mojdigitalstudio/clamav:0.102.X_Y
+docker build -t hmpps/hmpps-clamav:latest .
+docker tag  hmpps/hmpps-clamav:latest  hmpps/hmpps-clamav:0.102.X_Y
+```
+
+## To push the image built to quay.io:
+
+```bash
+docker push quay.io/hmpps/hmpps-clamav:latest
+docker push quay.io/hmpps/hmpps-clamav:0.102.X_Y
 ```
 
 ## Circle CI
 
-Whenever merges are made to the master branch a circle CI job is triggered to build a new image.
+Whenever merges are made to the master branch a circle CI job is triggered to build & push a new image to quay.io.
 
 ## Deployment instructions
 
@@ -40,13 +45,10 @@ This docker image is mostly borrowed from: <https://github.com/UKHomeOffice/dock
 - Specified a specific group ID for clamav, needed for the security context in the K8s volume mount
 - Updated the clamav version to the current latest stable version
 
-Upon merging to master, the docker image will be built and pushed to the quay.io image repository.
-
-
 ## To pull the latest image:
 
 ```bash
-docker pull mojdigitalstudio/clamav:latest
+docker pull quay.io/hmpps/hmpps-clamav:latest
 ```
 
 ## After a rebuild / push of the image (via CicleCI)
@@ -56,6 +58,6 @@ Each service which makes use of this will need to handle its own deployment.
 ## For a local development environment, run freshclam and clamd standalone:
 
 ```bash
-docker run -d -p 3310:3310  mojdigitalstudio/clamav:latest
+docker run -d -p 3310:3310  hmpps/hmpps-clamav:latest
 ```
 
