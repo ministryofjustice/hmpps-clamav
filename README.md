@@ -20,7 +20,7 @@ docker build -t hmpps/hmpps-clamav:latest .
 docker tag  hmpps/hmpps-clamav:latest  hmpps/hmpps-clamav:0.102.X_Y
 ```
 
-## To push the image built to quay.io:
+## To manually push the image built to quay.io (though should not be needed, as circleci will do this) :
 
 ```bash
 docker push quay.io/hmpps/hmpps-clamav:latest
@@ -35,7 +35,7 @@ Whenever merges are made to the master branch a circle CI job is triggered to bu
 
 The docker image can be deployed and run in the same way as any docker image, and for HMPPS this includes:
 
- - Locally, as part of a docker-compose'd set of inter-dependent services
+ - Locally, as part of a docker-compose set of inter-dependent services
  - As part of a Kubernetes deployment (deployment is managed by each service requiring AV)
 
 This docker image is mostly borrowed from: <https://github.com/UKHomeOffice/docker-clamav> ...but with a few changes:
@@ -53,7 +53,7 @@ docker pull quay.io/hmpps/hmpps-clamav:latest
 
 ## After a rebuild / push of the image (via CicleCI)
 
-Each service which makes use of this will need to handle its own deployment.
+Each service which makes use of this will need to handle its own deployment - see `pathfinder` for an example in k8s.
 
 ## For a local development environment, run freshclam and clamd standalone:
 
