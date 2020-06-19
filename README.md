@@ -1,6 +1,6 @@
 # hmpps-clamav
 
-[![CircleCI](https://circleci.com/gh/ministryofjustice/hmpps-clamav/tree/master.svg?style=svg)](https://circleci.com/gh/ministryofjustice/hmpps-clamav)
+[![CircleCI](https://circleci.com/gh/ministryofjustice/hmpps-clamav/tree/main.svg?style=svg)](https://circleci.com/gh/ministryofjustice/hmpps-clamav)
 [![Known Vulnerabilities](https://snyk.io/test/github/ministryofjustice/hmpps-clamav/badge.svg)](https://snyk.io/test/github/ministryofjustice/hmpps-clamav)
 
 Repository which is used to build a tailored version of a ClamAV docker image.
@@ -29,7 +29,7 @@ docker push quay.io/hmpps/hmpps-clamav:0.102.X_Y
 
 ## Circle CI
 
-Whenever merges are made to the master branch a circle CI job is triggered to build & push a new image to quay.io.
+Whenever merges are made to the main branch a circle CI job is triggered to build & push a new image to quay.io.
 
 ## Deployment instructions
 
