@@ -20,6 +20,8 @@ docker build -t hmpps/hmpps-clamav:latest .
 docker tag  hmpps/hmpps-clamav:latest  hmpps/hmpps-clamav:0.102.X_Y
 ```
 
+If you see an error relating to signature of the clamav dowload, you may need to update the talos.pub public key from the website (https://talosintelligence.com/about)
+
 ## To manually push the image built to quay.io (though should not be needed, as circleci will do this) :
 
 ```bash
@@ -51,7 +53,7 @@ This docker image is mostly borrowed from: <https://github.com/UKHomeOffice/dock
 docker pull quay.io/hmpps/hmpps-clamav:latest
 ```
 
-## After a rebuild / push of the image (via CicleCI)
+## After a rebuild / push of the image (via CircleCI)
 
 Each service which makes use of this will need to handle its own deployment - see `pathfinder` for an example in k8s.
 
