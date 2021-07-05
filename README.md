@@ -1,5 +1,9 @@
 # hmpps-clamav
 
+PROJECT ARCHIVED. Now moved to <https://github.com/ministryofjustice/hmpps-utility-container-images>
+
+---
+
 [![CircleCI](https://circleci.com/gh/ministryofjustice/hmpps-clamav/tree/main.svg?style=svg)](https://circleci.com/gh/ministryofjustice/hmpps-clamav)
 [![Known Vulnerabilities](https://snyk.io/test/github/ministryofjustice/hmpps-clamav/badge.svg)](https://snyk.io/test/github/ministryofjustice/hmpps-clamav)
 
